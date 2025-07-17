@@ -1,0 +1,28 @@
+{
+  "name": "focus-forge",
+  "version": "1.0.3",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.zekiel.focusforge",
+    "productName": "Focus-Forge",
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "src/icon/icon.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^X.X.X",
+    "electron-builder": "^26.0.12",
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "discord-rpc": "^4.0.1"
+  }
+}
