@@ -76,6 +76,8 @@ document.getElementById("clearHistoryBtn").addEventListener("click", () => {
 
 document.getElementById('dcRpc').addEventListener("change",function (){
   document.getElementById("dcRpcToggle").classList.toggle("justify-end")
+  document.getElementById("dcRpcToggle").classList.toggle("bg-red-300")
+  document.querySelector("#dcRpcToggle div").classList.toggle("bg-red-500")
     if(!this.checked){
       ipcRenderer.send('DCrpcVisibility')
     }
