@@ -20,7 +20,7 @@ function createWindow() {
       contextIsolation: false,
       preload: path.join(__dirname, 'preload.js'),
     },
-    icon: path.join(__dirname, 'src/icon/icon.ico')
+    icon: path.join(__dirname, 'src/icon/icon.ico') 
     
  });
  win.loadFile("src/index.html");
@@ -93,7 +93,6 @@ ipcMain.on('reset', (event) => {
 ipcMain.on('DCrpcVisibility', (event)=>{
   rpc.clearActivity();
   showDCrpc = !showDCrpc;
-  console.log(showDCrpc)
 })
 
 

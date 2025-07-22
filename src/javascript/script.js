@@ -1,7 +1,6 @@
 let timerOption = document.querySelectorAll('input[name="selectTimer"]');
 let isPomodoroSelected = true;
 const { ipcRenderer } = require("electron");
-
 function setHistory() {
   getHistory = JSON.parse(localStorage.getItem("histories")) || [];
   previousSession = getHistory[0]?.sessionPomodoro ?? 0;
@@ -59,12 +58,6 @@ function updateTable(history) {
   table.innerHTML = rows;
 }
 
-document
-  .getElementById("notificationOption")
-  .addEventListener("change", function () {
-    document.getElementById("Audio").src = `Notification/${this.value}.mp3`;
-    document.getElementById("Audio").play();
-  });
 
 document.getElementById("clearHistoryBtn").addEventListener("click", () => {
   localStorage.removeItem("histories");
@@ -73,16 +66,3 @@ document.getElementById("clearHistoryBtn").addEventListener("click", () => {
   });
   document.getElementById("activityField").innerHTML = "";
 });
-
-document.getElementById('dcRpc').addEventListener("change",function (){
-  document.getElementById("dcRpcToggle").classList.toggle("justify-end")
-  document.getElementById("dcRpcToggle").classList.toggle("bg-red-300")
-  document.querySelector("#dcRpcToggle div").classList.toggle("bg-red-500")
-    if(!this.checked){
-      ipcRenderer.send('DCrpcVisibility')
-    }
-    else{
-      ipcRenderer.send('DCrpcVisibility')
-      ipcRenderer.send('reset')
-    }
-})
