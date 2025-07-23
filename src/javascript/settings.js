@@ -24,7 +24,7 @@ if (savedSetting.fokus) {
 }
 
 if(savedSetting.notification) {
-  document.getElementById("Audio").src = `Notification/${savedSetting.notification}.mp3`;
+  document.getElementById("Audio").src = `./notification/${savedSetting.notification}.mp3`;
 document.getElementById("notificationOption").value = savedSetting.notification;
 }   
 

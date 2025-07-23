@@ -24,7 +24,6 @@ function createWindow() {
     
  });
  win.loadFile("src/index.html");
- win.webContents.openDevTools();
 }
 
 ipcMain.on('notification',(event,title,body)=>{
